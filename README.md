@@ -1,8 +1,29 @@
-# Sell My Stuff
+# Sell My Stuff - Hackathon Project
 
-Sell My Stuff is a web application that helps you create compelling product listings by uploading a photo and receiving AI-powered descriptions and price suggestions.
+Sell My Stuff is a web application that helps you create compelling product listings by uploading a photo and receiving AI-powered descriptions and price suggestions. 
+
+This project serves as the target application for aspiring AWS cloud engineers participating in our hackathon.
 
 ![Sell My Stuff UI](docs/ui.png)
+
+## 🏆 Hackathon Challenge
+
+**Your Mission**: Deploy the complete infrastructure required to run this application using Terraform and GitHub Actions.
+
+This hackathon is designed to help aspiring cloud engineers gain hands-on experience with:
+- AWS infrastructure provisioning with Terraform
+- CI/CD pipelines with GitHub Actions
+- Static hosting with Amazon S3
+- Content distribution with Amazon CloudFront
+- Integration with Amazon API Gateway
+
+## Backend Project
+
+This is the frontend React application for the Sell My Stuff service. The backend API that powers this application can be found at:
+
+- **Backend Repository**: [Sell My Stuff - Backend](https://github.com/breakintocloud/hackathon-sell-my-stuff-backend)
+
+The backend provides AI-powered image analysis and generates professional product descriptions and price suggestions that are displayed in this frontend interface.
 
 ## Features
 
@@ -58,12 +79,6 @@ The app can be configured using environment variables. See [FRONTEND_CONFIG.md](
 
 ## Deployment
 
-This frontend is designed to be deployed as a static site to services like:
-- AWS S3 + CloudFront
-- Vercel
-- Netlify
-- GitHub Pages
-
 Simply build the project and deploy the `dist` folder contents.
 
 ## Usage
@@ -80,6 +95,22 @@ Simply build the project and deploy the `dist` folder contents.
 - [Vite](https://vite.dev/) - Build tool and dev server
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [React Markdown](https://github.com/remarkjs/react-markdown) - Markdown rendering
+
+## 🚀 Join the Break Into Cloud Community
+
+This hackathon is part of the [Break Into Cloud](https://www.skool.com/cloud) community, where aspiring cloud engineers come together to:
+
+- **Build Real Projects**: Get hands-on experience with AWS, Terraform, and modern DevOps practices
+- **Get Hired**: Connect with opportunities and receive guidance on landing cloud engineering roles
+- **Learn Together**: Join 783+ members in a supportive environment focused on practical cloud skills
+
+### Need Help or Want to Participate?
+
+- **Join our community**: [Break Into Cloud on Skool](https://www.skool.com/cloud)
+- **Get support**: Ask questions, share your progress, and get feedback from fellow cloud engineers
+- **Future hackathons**: Stay updated on upcoming challenges and learning opportunities
+
+Whether you're just starting your cloud journey or looking to advance your skills, our community provides the resources and support you need to succeed.
 
 ## License
 MIT
