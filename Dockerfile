@@ -17,6 +17,7 @@ WORKDIR /usr/local/app
 ###################################################
 FROM base AS client-base
 COPY client/package.json client/package-lock.json ./
+COPY .npmrc .
 RUN npm install
 COPY client/.eslintrc.cjs client/index.html client/vite.config.js ./
 COPY client/public ./public
@@ -55,6 +56,7 @@ RUN npm run build
 ###################################################
 FROM base AS backend-dev
 COPY backend/package.json backend/package-lock.json ./
+COPY .npmrc .
 RUN npm install
 COPY backend/spec ./spec
 COPY backend/src ./src
@@ -82,6 +84,7 @@ RUN npm run test
 FROM base AS final
 ENV NODE_ENV=production
 COPY --from=test /usr/local/app/package.json /usr/local/app/package-lock.json ./
+COPY .npmrc .
 RUN npm ci --production && \
     npm cache clean --force
 COPY backend/src ./src
