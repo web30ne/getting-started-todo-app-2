@@ -18,7 +18,7 @@ WORKDIR /usr/local/app
 FROM base AS client-base
 COPY client/package.json client/package-lock.json ./
 COPY .npmrc .
-RUN npm install
+RUN npm ci
 COPY client/.eslintrc.cjs client/index.html client/vite.config.js ./
 COPY client/public ./public
 COPY client/src ./src
@@ -59,7 +59,7 @@ RUN npm run build
 FROM base AS sqlite3-build
 COPY backend/package.json backend/package-lock.json ./
 COPY .npmrc .
-RUN npm install && cd node_modules/sqlite3 && ../.bin/node-gyp rebuild
+RUN npm ci && cd node_modules/sqlite3 && ../.bin/node-gyp rebuild
 
 ###################################################
 # Stage: backend-base
@@ -70,7 +70,7 @@ RUN npm install && cd node_modules/sqlite3 && ../.bin/node-gyp rebuild
 FROM base AS backend-dev
 COPY backend/package.json backend/package-lock.json ./
 COPY .npmrc .
-RUN npm install
+RUN npm ci
 COPY --from=sqlite3-build /usr/local/app/node_modules/sqlite3/build \
     ./node_modules/sqlite3/build
 COPY backend/spec ./spec
