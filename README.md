@@ -21,7 +21,7 @@ This hackathon is designed to help aspiring cloud engineers gain hands-on experi
 
 This is the frontend React application for the Sell My Stuff service. The backend API that powers this application can be found at:
 
-- **Backend Repository**: [Sell My Stuff - Backend](https://github.com/breakintocloud/hackathon-sell-my-stuff-backend)
+- **Backend Repository**: [Sell My Stuff - Backend](https://github.com/web30ne/hackathon-sell-my-stuff-backend)
 
 The backend provides AI-powered image analysis and generates professional product descriptions and price suggestions that are displayed in this frontend interface.
 
