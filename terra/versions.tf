@@ -6,10 +6,15 @@ terraform {
                         source = "hashicorp/aws"
                         version = ">= 5.72"
                 }
+
+		cloudflare = {
+			source = "cloudflare/cloudflare"
+			version = "~> 5.0"
+		}
         }
 
         backend "s3" {
-                bucket  = "sg-tf-states"
+                bucket  = "cloudproject-web30ne"
                 key     = "cloudproject/terraform.tfstate"
                 region  = "eu-west-1"
                 use_lockfile = true

@@ -15,5 +15,7 @@ resource "aws_acm_certificate" "assessment" {
 resource "aws_acm_certificate_validation" "assessment" {
   provider                = aws.us-east-1
   certificate_arn         = aws_acm_certificate.assessment.arn
-  validation_record_fqdns = [for r in aws_route53_record.assessment : r.fqdn]
+  validation_record_fqdns = [for dvo in aws_acm_certificate.assessment.domain_validation_options : dvo.resource_record_name]
+
+  depends_on = [cloudflare_dns_record.acm_validation]
 }
